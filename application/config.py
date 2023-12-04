@@ -1,7 +1,7 @@
 """
 A module for config in the application package.
 """
-from pydantic import HttpUrl, IPvAnyAddress
+from pydantic import HttpUrl, IPvAnyAddress, PositiveInt
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -17,6 +17,7 @@ class Settings(BaseSettings):
         extra="allow",
     )
 
+    DEBUG_MODE: bool
     OPENAI_API_KEY: str
     TWITTER_BEARER_TOKEN: str
     TWITTER_API_KEY: str
@@ -27,6 +28,7 @@ class Settings(BaseSettings):
     API_ENDPOINT: HttpUrl
     PROXYCURL_API_KEY: str
     SERVER_HOST: IPvAnyAddress
+    REQUEST_TIMEOUT: PositiveInt
 
 
 settings: Settings = Settings()
