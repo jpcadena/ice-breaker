@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "ice-breaker"
 version = "0.1.0"
-description = "Flask web application to meet a person with an IceBreaker strategy by using LLM"
+description = "Flask web app utilizing LangChain and OpenAI's LLM for creating engaging IceBreakers by analyzing social media profiles on platforms like LinkedIn and Twitter."
 license = "MIT"
 authors = ["Juan Pablo Cadena Aguilar <jpcadena@espol.edu.ec>"]
 maintainers = ["Juan Pablo Cadena Aguilar <jpcadena@espol.edu.ec>"]

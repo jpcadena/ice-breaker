@@ -22,7 +22,7 @@
   <p align="center">
     LLM IceBreaker with a Flask web application
     <br />
-    <a href="https://github.com/jpcadena/ice-breaker"><strong>Explore the docs 
+    <a href="https://github.com/jpcadena/ice-breaker"><strong>Explore the docs
 »</strong></a>
     <br />
   </p>
@@ -63,10 +63,7 @@
 
 ![Project][project-screenshot]
 
-This project handles a web application using Flask microframework and 
-produces a generative application based on LangChain using LLM as a method 
-to meet someone on the web as an IceBreaker using the Artificial 
-Intelligence advantages from OpenAI ChatGPT.
+IceBreaker is a Flask-powered web application that harnesses the power of LangChain and OpenAI's Large Language Models (LLM) to create engaging and personalized IceBreaker strategies. By integrating with social media APIs such as Google Search, Twitter, and LinkedIn, IceBreaker offers a unique approach to connecting with people online, leveraging the advanced capabilities of ChatGPT for intelligent, context-aware interactions.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -76,14 +73,15 @@ Intelligence advantages from OpenAI ChatGPT.
 
 ### Components
 
-Here are the main components of the system:
+- **Flask Backend**: Serves as the backbone of the application, handling HTTP requests, API interactions, and serving dynamic content using Jinja2 templating.
 
-- **Flask Backend**: This is the backend for the LLM app. It's responsible for processing incoming requests, interacting with APIs, and returning responses to the client.
-- **OpenAI**: LLM agent for handling artificial intelligence tasks.
+- **LangChain with OpenAI LLM**: Utilizes advanced language models for generating personalized and contextually relevant IceBreaker suggestions.
 
-Each of these components plays a vital role in the functioning of the 
-full-stack application. Together, they make up a scalable, maintainable and 
-robust application.
+- **Social Media Integration**: Leverages APIs from Google Search, Twitter, and LinkedIn to gather insights and tailor conversations effectively.
+
+- **Frontend**: Built with HTML and CSS, providing a user-friendly interface for interaction.
+
+This application stands out by combining cutting-edge AI with practical social media insights, offering a novel way to break the ice in digital communications.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -156,13 +154,13 @@ robust application.
    flask run --debug
    ```
 
-   The `--debug` flag enables debug mode and hot reloading, which means the 
+   The `--debug` flag enables debug mode and hot reloading, which means the
    server will automatically update whenever you make changes to the code.
 
 
 4. **Interacting with the app:**
 
-   Once your server is running, you can interact with it using the 
+   Once your server is running, you can interact with it using the
    Javascript client at your web browser at `http://localhost:5000`.
 
 
