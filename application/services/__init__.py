@@ -1,0 +1,3 @@
+"""
+Package application.services initialization.
+"""

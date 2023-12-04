@@ -1,0 +1,3 @@
+"""
+Package application-routes initialization.
+"""

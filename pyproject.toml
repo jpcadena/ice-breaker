@@ -1,0 +1,270 @@
+[tool.poetry]
+name = "ice-breaker"
+version = "0.1.0"
+description = "Ice Breaker LLM"
+license = "MIT"
+authors = ["Juan Pablo Cadena Aguilar <jpcadena@espol.edu.ec>"]
+maintainers = ["Juan Pablo Cadena Aguilar <jpcadena@espol.edu.ec>"]
+readme = "README.md"
+homepage = "https://github.com/jpcadena/ice-breaker"
+repository = "https://github.com/jpcadena/ice-breaker"
+documentation = "https://github.com/jpcadena/ice-breaker"
+keywords = [
+    "python",
+    "flask",
+    "poetry",
+    "restful api",
+    "pydantic",
+    "sqlalchemy",
+    "ruff",
+    "isort",
+    "black-formatter",
+    "mypy"
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Environment :: Web Environment",
+    "Framework :: Flask",
+    "Framework :: Pydantic",
+    "Framework :: Pydantic :: 2",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Communications :: Email",
+    "Topic :: Communications :: File Sharing",
+    "Topic :: Communications :: Internet Phone",
+    "Topic :: Database",
+    "Topic :: Database :: Database Engines/Servers",
+    "Topic :: Documentation",
+    "Topic :: File Formats",
+    "Topic :: Internet",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Multimedia",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Security",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Testing :: Unit",
+    "Topic :: Software Development :: Version Control",
+    "Topic :: Software Development :: Version Control :: CVS",
+    "Topic :: Software Development :: Version Control :: Git",
+    "Topic :: Text Processing",
+    "Topic :: Text Processing :: Linguistic",
+    "Topic :: Text Processing :: Markup :: HTML",
+    "Topic :: Text Processing :: Markup :: Markdown",
+    "Topic :: Text Processing :: Markup :: reStructuredText",
+    "Typing :: Typed",
+]
+packages = [{include = "ice_breaker"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "^3.0.0"
+jinja2 = "^3.1.2"
+pydantic = "^2.5.2"
+pydantic-core = "^2.14.5"
+pydantic-settings = "^2.1.0"
+python-dotenv = "^1.0.0"
+numpy = "^1.26.2"
+sqlalchemy = "^2.0.23"
+requests = "^2.31.0"
+types-requests = "^2.31.0.10"
+oauthlib = "^3.2.2"
+langchain = "^0.0.345"
+openai = "^1.3.7"
+google-search-results = "^2.4.2"
+tweepy = "^4.14.0"
+isort = "^5.12.0"
+black = "^23.11.0"
+ruff = "^0.1.6"
+mypy = "^1.7.1"
+pre-commit = "^3.5.0"
+pytest = "^7.4.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.urls]
+"Ice Breaker" = "https://github.com/jpcadena/ice-breaker"
+
+[tool.isort]
+atomic = true
+#skip_gitignore = true
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+line_length = 80
+profile = "black"
+
+[tool.black]
+line-length = 80
+target-version = ["py311"]
+exclude = '''
+(
+    /(\.venv
+  | \.mypy_cache
+  | \.ruff_cache
+  | \.pytest_cache
+  | cache
+  | venv
+  | tests)/
+)
+'''
+skip-string-normalization = true
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+show_error_codes = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+exclude = ".venv|venv|tests|cache|.mypy_cache|.ruff_cache|.pytest_cache"
+disallow_any_generics = true
+disallow_subclassing_any = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_return_any = true
+implicit_reexport = false
+strict_optional = true
+strict_equality = true
+plugins = ["pydantic.mypy"]
+follow_imports = "silent"
+no_implicit_reexport = true
+ignore_missing_imports = true
+
+[tool.mypy-tests]
+ignore_errors = true
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true
+warn_untyped_fields = true
+
+[tool.ruff]
+select = ["E", "F"]
+ignore = []
+fixable = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "I",
+    "N",
+    "Q",
+    "S",
+    "T",
+    "W",
+    "ANN",
+    "ARG",
+    "BLE",
+    "COM",
+    "DJ",
+    "DTZ",
+    "EM",
+    "ERA",
+    "EXE",
+    "FBT",
+    "ICN",
+    "INP",
+    "ISC",
+    "NPY",
+    "PD",
+    "PGH",
+    "PIE",
+    "PL",
+    "PT",
+    "PTH",
+    "PYI",
+    "RET",
+    "RSE",
+    "RUF",
+    "SIM",
+    "SLF",
+    "TCH",
+    "TID",
+    "TRY",
+    "UP",
+    "YTT",
+]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".pytest_cache",
+    "cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+line-length = 80
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+target-version = "py311"
+
+[tool.ruff.mccabe]
+max-complexity = 10
+
+[tool.ruff.isort]
+known-third-party = ["fastapi", "pydantic", "starlette"]
+
+[tool.bandit]
+tests = ["B201", "B301"]
+skips = ["B101", "B601"]
+[tool.poetry.scripts]
+test = "pytest"
+
+[tool.pytest]
+addopts = [
+    "-rxXs",             # Display extra info for test failures
+    "--strict-config",   # Enforce strict pytest configuration
+    "--strict-markers",  # Enforce strict markers
+    "--ignore=docs_src", # Ignore the 'docs_src' directory
+]
+xfail_strict = true
+junit_family = "xunit2"
+filterwarnings = [
+    "error",
+    'ignore:The loop argument is deprecated since Python 3\.8, and scheduled for removal in Python 3\.10:DeprecationWarning:asyncio',
+    'ignore:starlette.middleware.wsgi is deprecated and will be removed in a future release\..*:DeprecationWarning:starlette',
+    "ignore:'cgi' is deprecated:DeprecationWarning",
+    "ignore:'crypt' is deprecated and slated for removal in Python 3.13:DeprecationWarning",
+    "ignore:You seem to already have a custom.*:RuntimeWarning:trio",
+    "ignore::trio.TrioDeprecationWarning",
+    'ignore::pytest.PytestDeprecationWarning:pytest_cov',
+]
