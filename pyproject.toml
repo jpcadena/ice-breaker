@@ -12,10 +12,15 @@ documentation = "https://github.com/jpcadena/ice-breaker"
 keywords = [
     "python",
     "flask",
+    "llm",
+    "lang-chain",
+    "openai",
+    "artificial-intelligence",
     "poetry",
     "restful api",
     "pydantic",
-    "sqlalchemy",
+    "twitter",
+    "linkedin",
     "ruff",
     "isort",
     "black-formatter",
@@ -98,7 +103,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.isort]
 atomic = true
-#skip_gitignore = true
+skip_gitignore = true
 sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
 multi_line_output = 3
 include_trailing_comma = true
@@ -236,9 +241,6 @@ target-version = "py311"
 
 [tool.ruff.mccabe]
 max-complexity = 10
-
-[tool.ruff.isort]
-known-third-party = ["fastapi", "pydantic", "starlette"]
 
 [tool.bandit]
 tests = ["B201", "B301"]
