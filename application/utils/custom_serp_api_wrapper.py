@@ -10,31 +10,31 @@ class CustomSerpAPIWrapper(SerpAPIWrapper):  # type: ignore
     """
     Custom Serp API wrapper class
     """
+
     def __init__(self) -> None:
-        super(CustomSerpAPIWrapper, self).__init__()
+        super().__init__()
 
     @staticmethod
     def _process_response(res: dict[str, Any]) -> str:
         """Process response from SerpAPI."""
-        if "error" in res.keys():
+        if "error" in res:
             raise ValueError(f"Got error from SerpAPI: {res['error']}")
-        if "answer_box" in res.keys() and "answer" in res["answer_box"].keys():
+        if "answer_box" in res and "answer" in res["answer_box"].keys():
             answer = res["answer_box"]["answer"]
-        elif ("answer_box" in res.keys() and "snippet" in
-              res["answer_box"].keys()):
+        elif "answer_box" in res and "snippet" in res["answer_box"].keys():
             answer = res["answer_box"]["snippet"]
         elif (
-            "answer_box" in res.keys()
+            "answer_box" in res
             and "snippet_highlighted_words" in res["answer_box"].keys()
         ):
             answer = res["answer_box"]["snippet_highlighted_words"][0]
         elif (
-            "sports_results" in res.keys()
+            "sports_results" in res
             and "game_spotlight" in res["sports_results"].keys()
         ):
             answer = res["sports_results"]["game_spotlight"]
         elif (
-            "knowledge_graph" in res.keys()
+            "knowledge_graph" in res
             and "description" in res["knowledge_graph"].keys()
         ):
             answer = res["knowledge_graph"]["description"]
