@@ -19,13 +19,16 @@ class IceBreaker(BaseModel):
 class TopicOfInterest(BaseModel):
     topics_of_interest: list[str] = Field(
         title="Topic Of Interest",
-        description="topic that might interest the person"
+        description="topic that might interest the person",
     )
 
 
 summary_parser: PydanticOutputParser = PydanticOutputParser(  # type: ignore
-    pydantic_object=Summary)
+    pydantic_object=Summary
+)
 ice_breaker_parser: PydanticOutputParser = PydanticOutputParser(  # type: ignore
-    pydantic_object=IceBreaker)
+    pydantic_object=IceBreaker
+)
 toi_parser: PydanticOutputParser = PydanticOutputParser(  # type: ignore
-    pydantic_object=IceBreaker)
+    pydantic_object=IceBreaker
+)

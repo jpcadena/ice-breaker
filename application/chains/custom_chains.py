@@ -2,8 +2,8 @@
 A module for custom chains in the application-chains package.
 """
 from langchain.chains import LLMChain
-from langchain.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
+from langchain_openai import ChatOpenAI
 
 from application.schemas.output_parsers import (
     ice_breaker_parser,

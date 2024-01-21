@@ -2,8 +2,8 @@
 A module for LinkedIn lookup agent in the application-agents package.
 """
 from langchain.agents import AgentExecutor, AgentType, Tool, initialize_agent
-from langchain.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
+from langchain_openai import ChatOpenAI
 
 from application.utils.custom_serp_api_wrapper import get_profile_url
 
@@ -17,7 +17,7 @@ def lookup(name: str) -> str:
     :rtype: str
     """
     llm: ChatOpenAI = ChatOpenAI(temperature=0)
-    template: str = """given the full name {name_of_person} I want you to get 
+    template: str = """given the full name {name_of_person} I want you to get
     it me a link to their Linkedin profile page.
       Your answer should contain only a URL"""
     tools_for_agent1: list[Tool] = [
@@ -28,8 +28,10 @@ def lookup(name: str) -> str:
         ),
     ]
     agent: AgentExecutor = initialize_agent(
-        tools_for_agent1, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
-        verbose=True
+        tools_for_agent1,
+        llm,
+        agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
+        verbose=True,
     )
     prompt_template: PromptTemplate = PromptTemplate(
         input_variables=["name_of_person"], template=template

@@ -17,8 +17,12 @@ def process() -> Response:
     :rtype: Response
     """
     name: str = request.form["name"]
-    summary_and_facts, interests, ice_breakers, profile_pic_url =\
-        ice_break_with(name)
+    (
+        summary_and_facts,
+        interests,
+        ice_breakers,
+        profile_pic_url,
+    ) = ice_break_with(name)
     return jsonify(
         {
             "summary_and_facts": summary_and_facts.model_dump(),

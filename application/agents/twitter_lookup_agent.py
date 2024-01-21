@@ -2,8 +2,8 @@
 A module for twitter lookup agent in the application-agents package.
 """
 from langchain.agents import AgentExecutor, AgentType, Tool, initialize_agent
-from langchain.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
+from langchain_openai import ChatOpenAI
 
 from application.utils.custom_serp_api_wrapper import get_profile_url
 

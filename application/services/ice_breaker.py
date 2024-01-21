@@ -29,7 +29,7 @@ from application.services.twitter import scrape_user_tweets
 
 
 def ice_break_with(
-    name: str
+    name: str,
 ) -> tuple[Summary, IceBreaker, TopicOfInterest, str]:
     """
     Ice break with name from LLM service

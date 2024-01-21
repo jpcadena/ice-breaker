@@ -40,7 +40,7 @@ def scrape_user_tweets(
         tweet_dict = {
             "text": tweet["text"],
             "url": f"{settings.TWITTER_BASE_ENDPOINT}{username}/status/"
-                   f"{tweet.id}"
+            f"{tweet.id}",
         }
         tweet_list.append(tweet_dict)
     return tweet_list
