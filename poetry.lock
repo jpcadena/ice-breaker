@@ -855,19 +855,19 @@ extended-testing = ["jinja2 (>=3,<4)"]
 
 [[package]]
 name = "langchain-openai"
-version = "0.0.3"
+version = "0.0.5"
 description = "An integration package connecting OpenAI and LangChain"
 optional = false
 python-versions = ">=3.8.1,<4.0"
 files = [
-    {file = "langchain_openai-0.0.3-py3-none-any.whl", hash = "sha256:32d8ae288e212ed47af418ffd216c8af3b8115514bb39127ca9e2910c06fc6b2"},
-    {file = "langchain_openai-0.0.3.tar.gz", hash = "sha256:19720510abcd7d6217a47d551def7779dc001aebbf978bda5c03e0a8c8167ac3"},
+    {file = "langchain_openai-0.0.5-py3-none-any.whl", hash = "sha256:93b37dfac274adad65e46d5d6e71411e00c6984bcc5e10f1d6bb58e7944dc01b"},
+    {file = "langchain_openai-0.0.5.tar.gz", hash = "sha256:f317fee5b652949ad96ad7edf8ef7a044a6a3f0cc71d1e12f9d5261789fd68c4"},
 ]
 
 [package.dependencies]
-langchain-core = ">=0.1.13,<0.2"
+langchain-core = ">=0.1.16,<0.2"
 numpy = ">=1,<2"
-openai = ">=1.6.1,<2.0.0"
+openai = ">=1.10.0,<2.0.0"
 tiktoken = ">=0.5.2,<0.6.0"
 
 [[package]]
@@ -2116,4 +2116,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "7870dfdf1a64b4b682d03557327da1db0cf8f5db64c7ca257f752256950bb26a"
+content-hash = "5be9bdd7faf4233b51295297c16b98e70761ada14776ae3f94067e63f89fc49f"
