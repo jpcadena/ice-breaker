@@ -1,6 +1,7 @@
 """
 A module for custom chains in the application-chains package.
 """
+
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI

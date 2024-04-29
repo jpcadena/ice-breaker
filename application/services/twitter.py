@@ -1,6 +1,7 @@
 """
 A module for twitter in the application.services package.
 """
+
 import logging
 
 import tweepy

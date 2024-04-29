@@ -1,0 +1,17 @@
+{
+  "configurations": [
+    {
+      "args": [],
+      "console": "integratedTerminal",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "jinja": true,
+      "name": "Ice breaker LLM app",
+      "program": "${workspaceFolder}/main.py",
+      "request": "launch",
+      "type": "debugpy"
+    }
+  ],
+  "version": "0.2.0"
+}

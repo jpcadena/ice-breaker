@@ -1,6 +1,7 @@
 """
 A module for icebreaker in the application.services package.
 """
+
 from typing import Any
 
 from langchain.chains import LLMChain

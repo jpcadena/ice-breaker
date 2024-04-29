@@ -4,7 +4,7 @@ default_language_version:
   python: python3.11
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v4.6.0
     hooks:
       - id: check-added-large-files
       - id: check-case-conflict
@@ -22,36 +22,59 @@ repos:
         args: [ --markdown-linebreak-ext=md ]
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.15.0
+    rev: v3.15.2
     hooks:
       - id: pyupgrade
         args:
           - --py3-plus
           - --keep-runtime-typing
 
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.2
+    hooks:
+      # Run the linter.
+      - id: ruff
+        args: [ "--fix", "--exit-non-zero-on-fix", "--config",
+                "pyproject.toml" ]
+
   - repo: https://github.com/pycqa/isort
     rev: 5.13.2
     hooks:
       - id: isort
+        name: isort (python)
+        args: [ "--sp", "pyproject.toml" ]
 
   # Using this mirror lets us use mypyc-compiled black, which is about 2x faster
   - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 23.12.1
+    rev: 24.4.2
     hooks:
       - id: black
-
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.8.0
-    hooks:
-      - id: mypy
-        additional_dependencies:
-          - 'pydantic'
+        args: [ "--config", "pyproject.toml" ]
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.1.14
+    rev: v0.4.2
     hooks:
-      - id: ruff
-        args: [ --fix, --exit-non-zero-on-fix ]
+      # Run the formatter.
+      - id: ruff-format
+        args: [ "--config", "pyproject.toml" ]
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.10.0
+    hooks:
+      - id: mypy
+        args: [ "--config-file", "pyproject.toml" ]
+        additional_dependencies:
+          [
+            pydantic,
+            pydantic-settings,
+          ]
+
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.8
+    hooks:
+      - id: bandit
+        args: [ "-c", "pyproject.toml" ]
+        additional_dependencies: [ "bandit[toml]" ]
 
   - repo: local
     hooks:

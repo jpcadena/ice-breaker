@@ -1,6 +1,7 @@
 """
 A module for config in the application package.
 """
+
 from pydantic import HttpUrl, IPvAnyAddress, PositiveInt
 from pydantic_settings import BaseSettings, SettingsConfigDict
 

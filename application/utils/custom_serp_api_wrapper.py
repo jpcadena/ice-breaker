@@ -1,6 +1,7 @@
 """
 A module for custom serp api wrapper in the application.utils package.
 """
+
 from typing import Any
 
 from langchain.utilities import SerpAPIWrapper

@@ -1,6 +1,7 @@
 """
 A module for LinkedIn in the application.services package.
 """
+
 from typing import Any
 
 import requests
@@ -18,7 +19,7 @@ def scrape_linkedin_profile(linkedin_profile_url: str) -> dict[str, Any]:
     :rtype: dict[str, Any]
     """
     header_dic: dict[str, str] = {
-        "Authorization": f'Bearer {settings.PROXYCURL_API_KEY}'
+        "Authorization": f"Bearer {settings.PROXYCURL_API_KEY}"
     }
     response: Response = requests.get(
         str(settings.API_ENDPOINT),

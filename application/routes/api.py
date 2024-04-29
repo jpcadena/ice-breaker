@@ -1,12 +1,13 @@
 """
 A module for api in the application-routes package.
 """
+
 from flask import Blueprint, jsonify, request
 from flask.wrappers import Response
 
 from application.services.ice_breaker import ice_break_with
 
-bp: Blueprint = Blueprint('api', __name__)
+bp: Blueprint = Blueprint("api", __name__)
 
 
 @bp.route("/process", methods=["POST"])

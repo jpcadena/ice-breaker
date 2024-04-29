@@ -1,0 +1,18 @@
+Prompt templates: Wrapper class around a prompt
+
+Prompt is a text input recieved by the LLM and is used to process the data
+and return an output as displayed message
+
+Chat models: Containing LLM
+
+Chains: Combine multiple commands together
+
+Temperature in LLM is the level of creativity for the model. 0 is not creative.
+
+Prompt is a guide for the model
+
+GPT over a billion words
+
+few-shot includes some examples
+one-shot
+zero-shot with no input data

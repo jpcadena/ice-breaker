@@ -1,6 +1,7 @@
 """
 A module for output parsers in the application-schemas package.
 """
+
 from langchain.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field
 
