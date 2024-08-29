@@ -2,6 +2,8 @@
 A module for config in the application package.
 """
 
+from functools import lru_cache
+
 from pydantic import HttpUrl, IPvAnyAddress, PositiveInt
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -32,4 +34,15 @@ class Settings(BaseSettings):
     REQUEST_TIMEOUT: PositiveInt
 
 
-settings: Settings = Settings()
+@lru_cache
+def get_settings() -> Settings:
+    """
+    Get the cached settings object
+
+    :return: The cached settings instance
+    :rtype: Settings
+    """
+    return Settings()
+
+
+settings: Settings = get_settings()
